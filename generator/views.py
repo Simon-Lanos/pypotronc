@@ -3,10 +3,6 @@ import random
 
 def create(request):
 
-	number1 = random.randint(0,9)
-	number2 = random.randint(0,9)
-	number3 = random.randint(0,9)
-
 	liste1 = ['Vu', 'En ce qui concerne', 'Quelle que soit', 'Quoi qu\'on dise concernant',
 	'Avec', 'Si vous voulez mon avis concernant', 'Afin de circonvenir à', 'Dans le but de pallier à',
 	'Pour réagir face à', 'Malgré',]
@@ -20,13 +16,9 @@ def create(request):
 	'd\'embaucher des stagières bac+5', 'de ne pas oublier sa girafe dans son sellier', 
 	'de rendre nos politiciens responsable', 'de ranger vos bébés dans une poubelle']
 
-	print(number1)
-	print(number2)
-	print(number3)
-
-	mot = liste1[number1]
-	mot2 = liste2[number2]
-	mot3 = liste3[number3]
+	mot = random.choice(liste1)
+	mot2 = random.choice(liste2)
+	mot3 = random.choice(liste3)
 
 	data = {'phrase':mot + ' ' + mot2 + ', je conseille ' + mot3 + '.'}
 
@@ -41,8 +33,6 @@ def code(request):
 		}
 	"""]
 
-	number1 = random.randint(0,2)
-
-	data = {'phrase':liste1[number1], 'languages':['php', 'javascript', 'brainF*ck']}
+	data = {'phrase':random.choice(liste1), 'languages':['php', 'javascript', 'brainF*ck']}
 
 	return render_to_response('default.html', data)
