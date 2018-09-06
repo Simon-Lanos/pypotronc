@@ -23,17 +23,17 @@ def create(request):
 		try:
 			mot = liste1[int(uid[0])]
 		except IndexError as e:
-			return render_to_response('default.html')
+			return render_to_response('404.html')
 
 		try:
 			mot2 = liste2[int(uid[1])]
 		except IndexError as e:
-			return render_to_response('default.html')
+			return render_to_response('404.html')
 
 		try:
 			mot3 = liste3[int(uid[2])]
 		except IndexError as e:
-			return render_to_response('default.html')
+			return render_to_response('404.html')
 
 	else :
 		mot = random.choice(liste1)
