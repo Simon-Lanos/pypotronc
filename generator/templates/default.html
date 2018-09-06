@@ -2,6 +2,47 @@
 <html>
 <head>
 	<title>coucou</title>
+    <style>
+        html {
+            background-image: radial-gradient(white, black);
+            background-size: 100% 100%;
+            background-attachment: fixed;
+        }
+        body {
+            color: black;
+            margin: auto;
+            width: 80%;
+            text-align: center;
+            margin-top: 40vh;
+            font-size: 1.2em;
+        }
+        button {
+            padding: 10px 20px;
+            margin-left: 5px;
+            background-color: brown;
+            border: 1px solid brown;
+            border-radius: 20px;
+            color: aliceblue;
+        }
+        p {
+            font-size: 2em;
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+            background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+            background-repeat: repeat-x;
+            background-size: 50%;
+            animation-name: reinbow;
+            color: transparent;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        @keyframes reinbow {
+            0%{background-position:0% 50%}
+            100%{background-position:100% 50%}
+        }
+    </style>
 </head>
 <body>
 	<h1>yolo</h1>
