@@ -16,11 +16,33 @@ def create(request):
 	'd\'embaucher des stagières bac+5', 'de ne pas oublier sa girafe dans son sellier', 
 	'de rendre nos politiciens responsable', 'de ranger vos bébés dans une poubelle',' un fist ',' de fermer vos gueules ']
 
-	mot = random.choice(liste1)
-	mot2 = random.choice(liste2)
-	mot3 = random.choice(liste3)
+	if request.GET != {}:
+		uid = request.GET['id']
+		uid = uid.split('-')
+		print(uid)
+		try:
+			mot = liste1[int(uid[0])]
+		except IndexError as e:
+			return render_to_response('default.html')
 
-	data = {'phrase':mot + ' ' + mot2 + ', je conseille ' + mot3 + '.'}
+		try:
+			mot2 = liste2[int(uid[1])]
+		except IndexError as e:
+			return render_to_response('default.html')
+
+		try:
+			mot3 = liste3[int(uid[2])]
+		except IndexError as e:
+			return render_to_response('default.html')
+
+	else :
+		mot = random.choice(liste1)
+		mot2 = random.choice(liste2)
+		mot3 = random.choice(liste3)
+
+	idGet = '?id=' + str(liste1.index(mot)) + '-' + str(liste2.index(mot2)) + '-' + str(liste3.index(mot3))
+
+	data = {'phrase':mot + ' ' + mot2 + ', je conseille ' + mot3 + '.', 'GET':idGet}
 
 	return render_to_response('default.html', data)
 
