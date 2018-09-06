@@ -64,7 +64,7 @@ def create(request):
 
 	idGet = '?id=' + str(liste1.index(mot)) + '-' + str(liste2.index(mot2)) + '-' + str(liste3.index(mot3)) + '-' +  str(liste4.index(mot4)) + '-' + str(liste5.index(mot5))
 
-	data = {'phrase':mot + ' ' + mot2 + ', je conseille ' + mot3 + ' ainsi ' + mot4 + ' ' + mot5 + '.', 'GET':idGet}
+	data = {'phrase':mot + ' ' + mot2 + ', je conseille ' + mot3 + ', ainsi ' + mot4 + ' ' + mot5 + '.', 'GET':idGet}
 
 	return render_to_response('default.html', data)
 
