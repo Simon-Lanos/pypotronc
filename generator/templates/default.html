@@ -9,5 +9,8 @@
 	{% for i in languages %}
 		<p>{{ i }}</p>
 	{%endfor%}
+	{% if GET %}
+		<a href="http://localhost:8000/generator/text{{ GET }}">Partagez ce lien !</a>
+	{% endif %}
 </body>
 </html>
