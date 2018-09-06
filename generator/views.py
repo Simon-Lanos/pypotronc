@@ -8,13 +8,13 @@ def create(request):
 	'Pour réagir face à', 'Malgré',]
 
 	liste2 = ['la politique','l\'ambiance','la situation','l\'inconstance','cette inflexion',
-	'cette inflexion','la restriction','l\'orientation','la dégradation','cette difficulté',
-	'la baisse de confiance',]
+	'cette inflexion','la restriction','l\'orientation sexuelle de votre enfant','la dégradation','cette difficulté',
+	'la baise de confiance',' un mauvais coup ',]
 
 	liste3 = ['une remise a zéro', 'd\'appeler dédé le fils d\'un ventriloque', 'd\'enterrer les preuves',
-	'de vendre nos parts chez LIDL', 'de créer une école du numérique', 'de faire des crêpes bretonnes',
+	'de vendre nos parts de la NWS', 'de créer une école du numérique', 'de faire des crêpes bretonnes',
 	'd\'embaucher des stagières bac+5', 'de ne pas oublier sa girafe dans son sellier', 
-	'de rendre nos politiciens responsable', 'de ranger vos bébés dans une poubelle']
+	'de rendre nos politiciens responsable', 'de ranger vos bébés dans une poubelle',' un fist ',' de fermer vos gueules ']
 
 	mot = random.choice(liste1)
 	mot2 = random.choice(liste2)
