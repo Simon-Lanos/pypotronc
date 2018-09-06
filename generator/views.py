@@ -16,6 +16,18 @@ def create(request):
 	'd\'embaucher des stagières bac+5', 'de ne pas oublier sa girafe dans son sellier', 
 	'de rendre nos politiciens responsable', 'de ranger vos bébés dans une poubelle',' un fist ',' de fermer vos gueules ']
 
+	liste4 = ['qu\'un pain dans la gueule', 'qu\'une biture au vin blanc', 'qu\'une éradication de masse',
+			  'qu\'une reconfiguration', 'qu\'un plan social', 'qu\'une élévation spirituelle',
+			  'qu\'un renouvellement de mandat', 'que l\'admnistration d\'une carotte par voie anale',
+			  'qu\'un masque au Nutella', 'qu\'une tortue au pouvoir', 'qu\'un reboot',
+			  'qu\'une balle entre les yeux']
+
+	liste5 = ['rapidement', 'en urgence', 'doucement',
+			  'en douceur', 'violemment', 'par un professionnel',
+			  'au CESi', 'dans la minute',
+			  'dans la seconde', 'avec prudence', 'déguisé en prostituée bulgare',
+			  'avec classe']
+
 	if request.GET != {}:
 		uid = request.GET['id']
 		uid = uid.split('-')
@@ -34,15 +46,25 @@ def create(request):
 			mot3 = liste3[int(uid[2])]
 		except IndexError as e:
 			return render_to_response('404.html')
+		try:
+			mot4 = liste4[int(uid[3])]
+		except IndexError as e:
+			return render_to_response('404.html')
+		try:
+			mot5 = liste5[int(uid[4])]
+		except IndexError as e:
+			return render_to_response('404.html')
 
 	else :
 		mot = random.choice(liste1)
 		mot2 = random.choice(liste2)
 		mot3 = random.choice(liste3)
+		mot4 = random.choice(liste4)
+		mot5 = random.choice(liste5)
 
-	idGet = '?id=' + str(liste1.index(mot)) + '-' + str(liste2.index(mot2)) + '-' + str(liste3.index(mot3))
+	idGet = '?id=' + str(liste1.index(mot)) + '-' + str(liste2.index(mot2)) + '-' + str(liste3.index(mot3)) + '-' +  str(liste4.index(mot4)) + '-' + str(liste5.index(mot5))
 
-	data = {'phrase':mot + ' ' + mot2 + ', je conseille ' + mot3 + '.', 'GET':idGet}
+	data = {'phrase':mot + ' ' + mot2 + ', je conseille ' + mot3 + ' ainsi ' + mot4 + ' ' + mot5 + '.', 'GET':idGet}
 
 	return render_to_response('default.html', data)
 
